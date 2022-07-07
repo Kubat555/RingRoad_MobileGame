@@ -11,11 +11,20 @@ public class Player : MonoBehaviour
         GlobalEventManager.ResetPoint.AddListener(ResetScorePoint);
     }
 
+    void OnTriggerEnter2D(Collider2D collider2D)
+    {
+        if (collider2D.CompareTag("Coin"))
+        {
+            scorePoint++;
+            print(scorePoint);
+        }
+    }
     
-
     private void ResetScorePoint()
     {
         scorePoint = 0;
     }
+
+    
         
 }
