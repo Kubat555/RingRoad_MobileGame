@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
         if (collider2D.CompareTag("Coin"))
         {
             scorePoint++;
+            GlobalEventManager.OnCoinPicked.Invoke();
+            Destroy(collider2D.gameObject);
             print(scorePoint);
         }
     }
@@ -24,7 +26,4 @@ public class Player : MonoBehaviour
     {
         scorePoint = 0;
     }
-
-    
-        
 }
