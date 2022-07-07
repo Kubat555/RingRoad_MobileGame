@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject spawnerObstacle;
 
+    [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private GameObject restartPanel;
+    [SerializeField] private GameObject inGamePanel;
+
     private float time;
     public static bool inGame = true;
     private float maxTime;
