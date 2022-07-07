@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    public static Spawner instance;
+
     public float yFrom;
     public float yTo;
 
@@ -12,11 +14,19 @@ public class Spawner : MonoBehaviour
 
     public GameObject[] spawnObj;
 
-    private void Start()
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
+    public void StartSpawn()
     {
         StartCoroutine(Spawn());
     }
-
+    
     IEnumerator Spawn()
     {
         while (true)
