@@ -522,6 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 1818887267}
+  spawnerObstacle: {fileID: 878956790}
 --- !u!50 &761553041
 Rigidbody2D:
   serializedVersion: 4
@@ -1126,6 +1127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1748017954}
   timeText: {fileID: 1451323648}
+  player: {fileID: 761553035}
+  spawnerObstacle: {fileID: 878956790}
 --- !u!4 &1411455097
 Transform:
   m_ObjectHideFlags: 0

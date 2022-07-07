@@ -7,5 +7,5 @@ public class GlobalEventManager : MonoBehaviour
 {
     public static UnityEvent OnCoinPicked = new UnityEvent();
     public static UnityEvent ResetPoint = new UnityEvent();
-    
+    public static UnityEvent LoseEvent = new UnityEvent();
 }

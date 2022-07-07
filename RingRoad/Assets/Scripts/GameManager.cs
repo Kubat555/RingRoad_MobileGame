@@ -7,25 +7,52 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI timeText;
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject spawnerObstacle;
 
     private float time;
+    public static bool inGame = true;
+    private float maxTime;
 
     // Start is called before the first frame update
     private void Start()
     {
+        maxTime = PlayerPrefs.GetFloat("MaxTime");
         timeText.text = time.ToString("F2");
         GlobalEventManager.OnCoinPicked.AddListener(RefreshScorePoint);
+        GlobalEventManager.LoseEvent.AddListener(Lose);
     }
 
-    // Update is called once per frame
     private void Update()
     {
-        time += Time.deltaTime;
-        timeText.text = time.ToString("F2");
+        if (inGame)
+        {
+            time += Time.deltaTime;
+            timeText.text = time.ToString("F2");
+        }
+       
     }
 
     private void RefreshScorePoint()
     {
         scoreText.text = Player.scorePoint.ToString();
+    }
+
+    void Lose()
+    {
+        if(maxTime < time)
+        {
+            maxTime = time;
+            PlayerPrefs.SetFloat("MaxTime", maxTime);
+        }
+    }
+
+    public void Restart()
+    {
+        player.SetActive(true);
+        spawnerObstacle.SetActive(true);
+        inGame = true;
+        time = 0;
+        GlobalEventManager.ResetPoint.Invoke();
     }
 }

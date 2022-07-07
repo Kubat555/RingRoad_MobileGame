@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public static float scorePoint;
     // Start is called before the first frame update
     [SerializeField] GameObject particle;
+    [SerializeField] GameObject spawnerObstacle;
     void Start()
     {
         GlobalEventManager.ResetPoint.AddListener(ResetScorePoint);
@@ -24,7 +25,12 @@ public class Player : MonoBehaviour
         if (collider2D.CompareTag("Enemy"))
         {
             particle.SetActive(gameObject);
-            Destroy(gameObject);
+            PlayerPrefs.SetFloat("MaxScore", PlayerPrefs.GetFloat("MaxScore") +  scorePoint);
+            PlayerPrefs.Save();
+            spawnerObstacle.SetActive(false);
+            GameManager.inGame = false;
+            GlobalEventManager.LoseEvent.Invoke();
+            gameObject.SetActive(false);
         }
     }
     
