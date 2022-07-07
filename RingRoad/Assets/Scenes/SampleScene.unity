@@ -292,9 +292,12 @@ GameObject:
   - component: {fileID: 761553036}
   - component: {fileID: 761553038}
   - component: {fileID: 761553037}
+  - component: {fileID: 761553039}
+  - component: {fileID: 761553040}
+  - component: {fileID: 761553041}
   m_Layer: 5
   m_Name: PlayerSprite
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -356,6 +359,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761553035}
   m_CullTransparentMesh: 1
+--- !u!58 &761553039
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761553035}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 48
+--- !u!114 &761553040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761553035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9445549f7af12b4495c71ce40e85bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &761553041
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761553035}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &878956790
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,10 +437,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df849e92ace4840419b5925288d6650c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yFrom: -2
-  yTo: 2
-  spawnTime: 2
-  spawnObjTime: 5
+  yFrom: -1.5
+  yTo: 1.5
+  startSpawnTime: 2
+  spawnObjTime: 4
   spawnObj:
   - {fileID: 2276349268868679848, guid: a443bf5be064b8e418d9e373d6445cc0, type: 3}
   - {fileID: 6677875043311526478, guid: dd3df0ee735d9e344b8371b1da48e2c2, type: 3}
