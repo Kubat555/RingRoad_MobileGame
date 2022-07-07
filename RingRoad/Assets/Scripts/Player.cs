@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public static float scorePoint;
     // Start is called before the first frame update
+    [SerializeField] GameObject particle;
     void Start()
     {
         GlobalEventManager.ResetPoint.AddListener(ResetScorePoint);
@@ -19,6 +20,11 @@ public class Player : MonoBehaviour
             GlobalEventManager.OnCoinPicked.Invoke();
             Destroy(collider2D.gameObject);
             print(scorePoint);
+        }
+        if (collider2D.CompareTag("Enemy"))
+        {
+            particle.SetActive(gameObject);
+            Destroy(gameObject);
         }
     }
     

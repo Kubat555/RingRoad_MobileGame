@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2091297540003113693}
   - component: {fileID: 8611941900694850283}
+  - component: {fileID: 6385958477686980438}
   m_Layer: 0
   m_Name: EnemyWithoutCoin
   m_TagString: Enemy
@@ -82,3 +83,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &6385958477686980438
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6677875043311526478}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 5.2360405e-10, y: 0.0043923096}
+  m_Size: {x: 4.232899, y: 0.85239625}
+  m_Direction: 1
