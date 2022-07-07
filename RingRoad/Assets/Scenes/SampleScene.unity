@@ -1235,9 +1235,9 @@ MonoBehaviour:
           m_StringArgument: Start
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+      - m_Target: {fileID: 1411455096}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: INGAME
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

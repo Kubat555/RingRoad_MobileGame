@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject particle;
 
     private float time;
-    public static bool inGame = true;
+    public static bool inGame = false;
     private float maxTime;
 
     // Start is called before the first frame update
@@ -73,5 +73,10 @@ public class GameManager : MonoBehaviour
         Spawner.instance.StartSpawn();
         particle.SetActive(false);
         RefreshScorePoint();
+    }
+
+    public void INGAME(bool a)
+    {
+        inGame = a;
     }
 }
