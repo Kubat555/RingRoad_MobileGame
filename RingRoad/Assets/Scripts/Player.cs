@@ -10,7 +10,8 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject spawnerObstacle;
 
     [SerializeField] GameObject overallText;
-    
+    [SerializeField] GameObject bestText;
+
     void Start()
     {
         GlobalEventManager.ResetPoint.AddListener(ResetScorePoint);
@@ -35,6 +36,7 @@ public class Player : MonoBehaviour
             GlobalEventManager.LoseEvent.Invoke();
             gameObject.SetActive(false);
             overallText.GetComponent<Animator>().SetTrigger("Show");
+            bestText.GetComponent<Animator>().SetTrigger("Show");
         }
     }
     

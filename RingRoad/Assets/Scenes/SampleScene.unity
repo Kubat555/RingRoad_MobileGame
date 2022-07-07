@@ -433,6 +433,18 @@ MonoBehaviour:
           m_StringArgument: Hide
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1756150287}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Hide
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &474279305
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,8 +474,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1756150284}
+  m_Children: []
   m_Father: {fileID: 1728247443}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -624,7 +635,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.4906105, g: 0.63180745, b: 0.990566, a: 0}
+  m_BackGroundColor: {r: 0.07058824, g: 0.1882353, b: 0.078431375, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -938,6 +949,7 @@ MonoBehaviour:
   particle: {fileID: 1818887267}
   spawnerObstacle: {fileID: 878956790}
   overallText: {fileID: 474279305}
+  bestText: {fileID: 1756150283}
 --- !u!50 &761553041
 Rigidbody2D:
   serializedVersion: 4
@@ -1260,6 +1272,18 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 474279309}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Hide
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1756150287}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
         m_Mode: 5
@@ -2142,6 +2166,7 @@ RectTransform:
   - {fileID: 1916842996}
   - {fileID: 392633421}
   - {fileID: 474279306}
+  - {fileID: 1756150284}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2370,6 +2395,7 @@ GameObject:
   - component: {fileID: 1756150284}
   - component: {fileID: 1756150285}
   - component: {fileID: 1756150286}
+  - component: {fileID: 1756150287}
   m_Layer: 5
   m_Name: BestTime
   m_TagString: Untagged
@@ -2388,12 +2414,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 474279306}
-  m_RootOrder: 0
+  m_Father: {fileID: 1728247443}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -1598.6902}
+  m_AnchoredPosition: {x: 0, y: 129.99976}
   m_SizeDelta: {x: 1080, y: 122.619995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1756150285
@@ -2493,6 +2519,25 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!95 &1756150287
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756150283}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d82b8a4ee0834ef4ca9554991ef6efc2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1818887267 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3481974364400064785, guid: a2b21090ef3fdec4ab1a2516c3d118cc, type: 3}
