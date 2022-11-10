@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] GameObject overallText;
     [SerializeField] GameObject bestText;
+    [SerializeField] AudioClip coinSound;
+    [SerializeField] AudioClip enemySound;
 
     void Start()
     {
@@ -23,12 +25,14 @@ public class Player : MonoBehaviour
         {
             scorePoint++;
             GlobalEventManager.OnCoinPicked.Invoke();
+            SoundManager.instance.PlaySound(coinSound);
             Destroy(collider2D.gameObject);
             print(scorePoint);
         }
         if (collider2D.CompareTag("Enemy"))
         {
             particle.SetActive(true);
+            SoundManager.instance.PlaySound(enemySound);
             PlayerPrefs.SetFloat("MaxScore", PlayerPrefs.GetFloat("MaxScore") +  scorePoint);
             PlayerPrefs.Save();
             spawnerObstacle.SetActive(false);
