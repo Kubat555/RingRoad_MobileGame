@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2091297540003113693}
   - component: {fileID: 8611941900694850283}
   - component: {fileID: 6385958477686980438}
+  - component: {fileID: -8637729812781901339}
   m_Layer: 0
   m_Name: EnemyWithoutCoin
   m_TagString: Enemy
@@ -99,3 +100,15 @@ CapsuleCollider2D:
   m_Offset: {x: 5.2360405e-10, y: 0.0043923096}
   m_Size: {x: 4.232899, y: 0.85239625}
   m_Direction: 1
+--- !u!114 &-8637729812781901339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6677875043311526478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47f65085ba772648b0be46158312026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

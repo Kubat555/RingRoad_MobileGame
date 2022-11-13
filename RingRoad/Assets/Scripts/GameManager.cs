@@ -57,17 +57,25 @@ public class GameManager : MonoBehaviour
         {
             time += Time.deltaTime;
             timeText.text = time.ToString("F2");
-            if(time >= 10 && time < 11){
-                Spawner.instance.ChangeSpeed(7);
-            }
             if(time >= 20 && time < 21){
-                Spawner.instance.ChangeSpeed(10);
+                Spawner.instance.ChangeSpeed(5);
+                Spawner.instance.destroyObjTime = 8;
+                Spawner.instance.startSpawnTime = 4;
             }
             if(time >= 40 && time < 41){
+                Spawner.instance.ChangeSpeed(7);
+            }
+            if(time >= 60 && time < 61){
+                Spawner.instance.ChangeSpeed(10);
+                Spawner.instance.destroyObjTime = 5;
+                Spawner.instance.startSpawnTime = 2f;
+            }
+            if(time >= 88 && time < 89){
                 Spawner.instance.ChangeSpeed(12);
             }
-            if(time >= 50 && time < 51){
+            if(time >= 100 && time < 101){
                 Spawner.instance.ChangeSpeed(14);
+                Spawner.instance.destroyObjTime = 3;
             }
         }
        
@@ -80,6 +88,7 @@ public class GameManager : MonoBehaviour
 
     void Lose()
     {
+        GlobalEventManager.onDestroyEnemy.Invoke();
         if(maxTime < time)
         {
             maxTime = time;
@@ -97,6 +106,8 @@ public class GameManager : MonoBehaviour
         inGame = true;
         time = 0;
         Spawner.instance.ChangeSpeed(enemyStartSpeed);
+        Spawner.instance.destroyObjTime = 9;
+        Spawner.instance.startSpawnTime = 6;
         GlobalEventManager.ResetPoint.Invoke();
         Spawner.instance.StartSpawn();
         particle.SetActive(false);

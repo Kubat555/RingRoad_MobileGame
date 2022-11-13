@@ -9,4 +9,5 @@ public class GlobalEventManager : MonoBehaviour
     public static UnityEvent ResetPoint = new UnityEvent();
     public static UnityEvent LoseEvent = new UnityEvent();
     
+    public static UnityEvent onDestroyEnemy = new UnityEvent();
 }

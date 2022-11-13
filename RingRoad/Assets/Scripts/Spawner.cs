@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     public float yTo;
 
     public float startSpawnTime;
-    public float spawnObjTime;
+    public float destroyObjTime;
     private float objSpeed;
 
     public GameObject[] spawnObj;
@@ -34,15 +34,17 @@ public class Spawner : MonoBehaviour
     
     IEnumerator Spawn()
     {
+        yield return new WaitForSeconds(1);
         while (true)
         {
-            yield return new WaitForSeconds(startSpawnTime);
+            
             GameObject a = Instantiate<GameObject>(spawnObj[Random.Range(0, spawnObj.Length)]);
             a.transform.position = new Vector3(-7, Random.Range(yFrom, yTo), 0);
-            LeanTween.moveX(a, objSpeed, spawnObjTime).setOnComplete(() =>
+            LeanTween.moveX(a, objSpeed, destroyObjTime).setOnComplete(() =>
             {
                 Destroy(a);
             });
+            yield return new WaitForSeconds(startSpawnTime);
         }
     }
 }

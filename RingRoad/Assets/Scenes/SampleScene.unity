@@ -1156,8 +1156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yFrom: -1.5
   yTo: 1.5
-  startSpawnTime: 2
-  spawnObjTime: 3
+  startSpawnTime: 6
+  destroyObjTime: 9
   spawnObj:
   - {fileID: 2276349268868679848, guid: 36932e319048778468ea84e5bd701d99, type: 3}
   - {fileID: 6677875043311526478, guid: 4fbf726e2f9e8f541a136d65b7711443, type: 3}
@@ -1867,7 +1867,7 @@ MonoBehaviour:
   restartButton: {fileID: 392633420}
   inGamePanel: {fileID: 718655034}
   particle: {fileID: 1818887267}
-  enemyStartSpeed: 5
+  enemyStartSpeed: 4.5
 --- !u!4 &1411455097
 Transform:
   m_ObjectHideFlags: 0
