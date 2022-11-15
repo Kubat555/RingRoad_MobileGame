@@ -9,8 +9,6 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject particle;
     [SerializeField] GameObject spawnerObstacle;
 
-    [SerializeField] GameObject overallText;
-    [SerializeField] GameObject bestText;
     [SerializeField] AudioClip coinSound;
     [SerializeField] AudioClip enemySound;
 
@@ -39,8 +37,7 @@ public class Player : MonoBehaviour
             GameManager.inGame = false;
             GlobalEventManager.LoseEvent.Invoke();
             gameObject.SetActive(false);
-            overallText.GetComponent<Animator>().SetTrigger("Show");
-            bestText.GetComponent<Animator>().SetTrigger("Show");
+            
         }
     }
     

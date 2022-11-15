@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public float currentTime {get{return time;}}
     public static bool inGame = false;
     private float maxTime;
+    bool playerLose = false;
 
     // Start is called before the first frame update
     private void Start()
@@ -88,6 +89,7 @@ public class GameManager : MonoBehaviour
 
     void Lose()
     {
+        playerLose = true;
         GlobalEventManager.onDestroyEnemy.Invoke();
         if(maxTime < time)
         {
@@ -95,18 +97,24 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetFloat("MaxTime", maxTime);
             timeMaxText.text = "Best time : " + maxTime.ToString("F2");
         }
-        restartButton.GetComponent<Animator>().SetTrigger("Start");
         coinsMaxText.text = "Overall coins : " + PlayerPrefs.GetFloat("MaxScore").ToString();
+        restartButton.GetComponent<Animator>().SetBool("Hide", false);
+        timeMaxText.GetComponent<Animator>().SetBool("Hide", false);
+        coinsMaxText.GetComponent<Animator>().SetBool("Hide", false);
     }
 
     public void Restart()
     {
+        restartButton.GetComponent<Animator>().SetBool("Hide", true);
+        timeMaxText.GetComponent<Animator>().SetBool("Hide", true);
+        coinsMaxText.GetComponent<Animator>().SetBool("Hide", true);
+        playerLose = false;
         player.SetActive(true);
         spawnerObstacle.SetActive(true);
         inGame = true;
         time = 0;
         Spawner.instance.ChangeSpeed(enemyStartSpeed);
-        Spawner.instance.destroyObjTime = 9;
+        Spawner.instance.destroyObjTime = 12;
         Spawner.instance.startSpawnTime = 6;
         GlobalEventManager.ResetPoint.Invoke();
         Spawner.instance.StartSpawn();
@@ -117,5 +125,27 @@ public class GameManager : MonoBehaviour
     public void INGAME(bool a)
     {
         inGame = a;
+    }
+
+    public void BackToMenu(){
+        GlobalEventManager.onDestroyEnemy.Invoke();
+        Time.timeScale = 1f;
+        print("Time is continue");
+        GameManager.inGame = false;
+        spawnerObstacle.SetActive(false);
+        restartButton.GetComponent<Animator>().SetBool("Hide", true);
+    }
+
+    public void GamePause(){
+        Time.timeScale = 0;
+        print("Time is paused");
+        inGame = false;
+    }
+    public void GameContinue(){
+
+        Time.timeScale = 1f;
+        print("Time is continue");
+        if(!playerLose)
+            inGame = true;
     }
 }

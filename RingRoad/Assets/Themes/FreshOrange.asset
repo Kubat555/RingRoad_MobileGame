@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270009ae014445740a77eabd6510de49, type: 3}
+  m_Name: FreshOrange
+  m_EditorClassIdentifier: 
+  Name: 
+  menuColor: {r: 0.9490196, g: 0.36078432, b: 0.32941177, a: 1}
+  playerColor: {r: 1, g: 1, b: 1, a: 1}
+  backColor: {r: 0.9490196, g: 0.4392157, b: 0.34901962, a: 1}
+  circleColor: {r: 0.96862745, g: 0.69803923, b: 0.40392157, a: 1}
+  BgObjects:
+  - {r: 0.9490197, g: 0.36078432, b: 0.32941177, a: 1}
+  - {r: 0.9686275, g: 0.69803923, b: 0.4039216, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  Price: 20
+  isOpen: 0
